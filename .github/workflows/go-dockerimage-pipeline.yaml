@@ -28,10 +28,10 @@ jobs:
         run: docker run --rm gotime
       
       #Step4 - Authenticates to Google Cloud with the existing JSON key
-        - name: Authenticate to Google Cloud
+      - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
         with:
-          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+            credentials_json: '${{ secrets.GCP_SA_KEY }}'
       
       #Step5 - Configures Docker to access my GCP project
       - name: Configure Docker to access GCP project
