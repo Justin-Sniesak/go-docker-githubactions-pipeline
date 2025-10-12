@@ -1,8 +1,8 @@
 #This workflow automatically takes my code, builds a docker image, and returns the date and time, which can be validated in the logs
 #This is the name of this workflow 
-name: Go Dockerimage Pipeline
+name: go-docker-gcp-gha-buildjob
 #This is workflow name 
-run-name: CI/CD Pipeline
+run-name: docker-go push to GCP
 #Trigger for the workflow 
 on:
   push:
@@ -14,12 +14,11 @@ jobs:
     #Specifies the type of VM OS to run.
     runs-on: ubuntu-latest
     steps:
-      #Step1 - Checks out code
+      #Step1 - Checks out the Go code
       - name: Checkout code
-      #Most recent version of actions/checkout - checksout repo to the runner
         uses: actions/checkout@v5
 
-      #Step2 - Builds the Docker image with provided code
+      #Step2 - Builds the Docker image with provided Go code
       - name: Docker
         run: docker build -t gotime .
 
@@ -28,13 +27,13 @@ jobs:
         run: docker run --rm gotime
       
       #Step4 - Authenticates to Google Cloud with the existing JSON key
-      - name: Authenticate to Google Cloud
+      - name: Authenticate to Google Cloud using serviceaccount
         uses: google-github-actions/auth@v3
         with:
             credentials_json: '${{ secrets.GCP_SA_KEY }}'
       
       #Step5 - Configures Docker to access my GCP project
-      - name: Configure Docker to access GCP project
+      - name: Configure Docker to access GCP 
         run: gcloud auth configure-docker us-west1-docker.pkg.dev
 
       #Step6 - Tags the container and pushes to the Artifact Repo in my GCP project
