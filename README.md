@@ -1,2 +1,96 @@
-# Cloudbuild-Cloudrun-Go-Pipeline
-CICD pipeline with unit testing of dockerized Go code
+# Go + Docker + GitHub Actions CI/CD Pipeline
+
+A lightweight, end-to-end demo showing how to build, containerize, and automate a Go application with **Docker** and **GitHub Actions**, integrated with **Google Cloud Artifact Registry**.
+
+---
+
+## 🚀 Project Overview
+This project demonstrates a complete **CI/CD workflow**:
+
+1. **Go app** — simple program that outputs your name, date, and time.  
+2. **Dockerized container** — validated locally with `docker ps -a`.  
+3. **Artifact Registry integration** — authenticated and pushed via `gcloud`.  
+4. **GitHub Actions pipeline** — automated build, validation, and image push.
+
+---
+Project Tree
+.
+├── Dockerfile
+├── main.go
+└── .github/
+    └── workflows/
+        └── ci.yml
+
+---
+
+## 🧠 What This Shows
+- Real-world **CI/CD pipeline** for a containerized Go app.  
+- Hands-on use of **GitHub Actions**, **Docker**, and **Google Cloud**.  
+- Clean, reproducible workflow for recruiters or hiring managers to verify.
+
+---
+
+## 🧩 Stack
+| Layer | Tool |
+|-------|------|
+| Language | Go |
+| Containerization | Docker |
+| CI/CD | GitHub Actions |
+| Cloud | Google Cloud Platform (Artifact Registry) |
+
+---
+
+## 🧰 Prerequisites
+- [Docker](https://docs.docker.com/get-docker/)
+- [Go](https://go.dev/doc/install)
+- [Google Cloud SDK](https://cloud.google.com/sdk/docs/install)
+- A Google Cloud project with an [Artifact Registry](https://cloud.google.com/artifact-registry)
+
+---
+
+## ⚙️ Reproduction Steps - Run all commands using bash
+
+### 1️⃣ Clone the repo
+```git clone https://github.com/justin-sniesak/go-docker-githubactions-pipeline.git```
+
+### 2️⃣ Build and run locally
+```docker build -t gotime .```
+
+```docker run gotime```
+
+Verify output:
+
+Hello, the date is 10/11/2025, and the time is 07:45 PM.
+
+### 3️⃣ Authenticate with Google Cloud
+
+```gcloud auth configure-docker```
+
+### 4️⃣ Push image to Artifact Registry
+
+```docker tag gotime us-west1-docker.pkg.dev/<your-project>/<repo-name>/gotime:latest```
+
+```docker push us-west1-docker.pkg.dev/<your-project>/<repo-name>/gotime:latest```
+
+### 5️⃣ GitHub Actions CI/CD
+
+Builds Docker image
+
+Outputs current time and date in the pipeline log
+
+### 🧾 Sample Output (GitHub Actions)
+
+### 💡 Lessons Learned
+
+How to link GitHub Actions → Docker | Create, authenticate to and push Dockerimage to GCP Artifact Registry
+
+CI/CD pipelines don’t have to be complex to be production-grade
+
+Debugging is part of mastery — not failure
+
+### 🏁 Author
+
+Justin Sniesak 
+
+Infrastructure Engineer | Cloud | Kubernetes | CI/CD | Go
+📍 Seattle, WA
