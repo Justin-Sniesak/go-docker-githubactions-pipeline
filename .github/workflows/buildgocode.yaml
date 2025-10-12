@@ -27,12 +27,3 @@ jobs:
       #Step3 - Run your container
       - name: Run container and capture output
         run: docker run --rm gotime
-        
-      #Configuration variables needed for the job to run
-        with: 
-          #Temp authentication token needed for the job to run
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          #Source destination - root
-          publish_dir: '.'
-          #Target destination - root
-          destination_dir: ''
