@@ -26,7 +26,7 @@ Please note, time returned is in UTC. If running locally, will default to PDT, t
         └── go-dockerimage-pipeline.yaml
 ├── Deployment
 ├── Docs
-└── OPERATIONS_LOG.md
+    └── OPERATIONS_LOG.md
 ├── Dockerfile
 ├── README.md
 └── utc-time-date.go
