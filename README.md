@@ -9,8 +9,11 @@ This project demonstrates a complete **CI/CD workflow**:
 
 1. **Go app** — simple program that outputs your name, date, and time.  
 2. **Dockerized container** — validated locally with `docker ps -a`.  
-3. **Artifact Registry integration** — authenticated and pushed via `gcloud`.  
-4. **GitHub Actions pipeline** — automated build, validation, and image push.
+3. **Artifact Registry integration** — authenticated and pushed via `gcloud`.
+
+### 🕒 Note on Timezone
+
+Please note, time returned is in UTC. If running locally, will default to PDT, this can easily be changed to the timezone of your choice if desired in the code.
 
 ---
 Project Tree
