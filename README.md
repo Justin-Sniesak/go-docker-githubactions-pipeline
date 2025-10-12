@@ -16,14 +16,17 @@ This project demonstrates a complete **CI/CD workflow**:
 Please note, time returned is in UTC. If running locally, will default to PDT, this can easily be changed to the timezone of your choice if desired in the code.
 
 ---
-Project Tree
-.
-├── Dockerfile
-├── main.go
-└── .github/
+## Repository Structure
+```
+├── .github/
     └── workflows/
-        └── ci.yml
+        ├── README.md
+        └── go-dockerimage-pipeline.yaml
+├── Dockerfile
+├── README.md
+└── utc-time-date.go
 
+```
 ---
 
 ## 🧠 What This Shows
