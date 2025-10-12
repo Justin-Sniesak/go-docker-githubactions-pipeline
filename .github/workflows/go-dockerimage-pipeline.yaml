@@ -35,9 +35,9 @@ jobs:
       
       #Step5 - Configures Docker to access my GCP project
       - name: Configure Docker to access GCP project
-        run: | gcloud auth configure-docker us-west1-docker.pkg.dev
+        run: gcloud auth configure-docker us-west1-docker.pkg.dev
 
       #Step6 - Tags the container and pushes to the Artifact Repo in my GCP project
       - name: Push to Artifact Registry
-        run: | docker tag gotime us-west1-docker.pkg.dev/juta-0816/go-code/gotime:latest
-              docker push us-west1-docker.pkg.dev/juta-0816/go-code/gotime:latest
+        run: docker tag gotime us-west1-docker.pkg.dev/juta-0816/go-code/gotime:latest
+             docker push us-west1-docker.pkg.dev/juta-0816/go-code/gotime:latest
