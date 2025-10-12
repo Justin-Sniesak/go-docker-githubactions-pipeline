@@ -27,6 +27,7 @@ Project Tree
 - Real-world **CI/CD pipeline** for a containerized Go app.  
 - Hands-on use of **GitHub Actions**, **Docker**, and **Google Cloud**.  
 - Clean, reproducible workflow for recruiters or hiring managers to verify.
+- Please note, time returned is in UTC. If running locally, will default to PDT, this can easily be changed to the timezone of your choice if desired in the code.
 
 ---
 
