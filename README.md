@@ -120,6 +120,10 @@ All screenshots included in repo.
 - **Problem:** Renamed code file but didn't update GitHub Actions YAML reference
 - **Solution:** Updated workflow file to match new filename, build completed successfully (RC0)
 
+**Issue 4: Tag and Push to GCP Failure**
+- **Problem:** Build is failing when attempting to tag the built docker image prior to pushing to Artifact Repo in GCP.
+- **Solution:** Added unit test job, tagged image earlier in build process, broke tag/push job into two different jobs
+
 ### 🏁 Author
 
 Justin Sniesak 
