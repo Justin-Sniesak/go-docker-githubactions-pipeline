@@ -2,6 +2,8 @@
 
 A lightweight, end-to-end demo showing how to build, containerize, and automate a Go application with **Docker** and **GitHub Actions**, integrated with **Google Cloud Artifact Registry**.
 
+All commands should be run using bash.
+
 ---
 
 ## 🚀 Project Overview
@@ -33,7 +35,6 @@ Please note, time returned is in UTC. If running locally, will default to PDT, t
 - Real-world **CI/CD pipeline** for a containerized Go app.  
 - Hands-on use of **GitHub Actions**, **Docker**, and **Google Cloud**.  
 - Clean, reproducible workflow for recruiters or hiring managers to verify.
-- Please note, time returned is in UTC. If running locally, will default to PDT, this can easily be changed to the timezone of your choice if desired in the code.
 
 ---
 
@@ -55,7 +56,7 @@ Please note, time returned is in UTC. If running locally, will default to PDT, t
 
 ---
 
-## ⚙️ Reproduction Steps - Run all commands using bash
+## ⚙️ Reproduction Steps
 
 ### 1️⃣ Clone the repo
 ```git clone https://github.com/justin-sniesak/go-docker-githubactions-pipeline.git```
@@ -87,13 +88,34 @@ Outputs current time and date in the pipeline log
 
 ### 🧾 Sample Output (GitHub Actions)
 
+```Run docker run --rm gotime```
+  ```docker run --rm gotime```
+  ```shell: /usr/bin/bash -e {0}```
+```Hello, the date is 10/12/2025, and the time is 06:10 AM.```
+
 ### 💡 Lessons Learned
 
-How to link GitHub Actions → Docker | Create, authenticate to and push Dockerimage to GCP Artifact Registry
+How to link GitHub Actions → Docker | Create, authenticate to and push Docker image to GCP Artifact Registry
 
 CI/CD pipelines don’t have to be complex to be production-grade
 
 Debugging is part of mastery — not failure
+
+### 🛠️ Troubleshooting
+
+All screenshots included in repo.
+
+**Issue 1: GCP Authentication Failure**
+- **Problem:** Incorrect account was set as active, blocking Docker image push to Artifact Registry
+- **Solution:** Switched to correct active account via `gcloud config set account`
+
+**Issue 2: Docker Build Failure**  
+- **Problem:** Dockerfile and Go code were not at root level, causing path errors
+- **Solution:** Moved both files to root directory to resolve COPY instruction
+
+**Issue 3: Pipeline Failure**
+- **Problem:** Renamed code file but didn't update GitHub Actions YAML reference
+- **Solution:** Updated workflow file to match new filename, build completed successfully (RC0)
 
 ### 🏁 Author
 
