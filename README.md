@@ -37,7 +37,7 @@ Please note, time returned is in UTC. If running locally, will default to PDT, t
 ## 🧠 What This Shows
 - Real-world **CI/CD pipeline** for a containerized Go app.  
 - Hands-on use of **GitHub Actions**, **Docker**, and **Google Cloud**.  
-- Clean, reproducible workflow for recruiters or hiring managers to verify.
+- Clean, reproducible workflow anyone can perform.
 
 ---
 
@@ -73,9 +73,19 @@ Verify output:
 
 Hello, the date is 10/11/2025, and the time is 07:45 PM.
 
-### 3️⃣ Authenticate with Google Cloud
+### 3️⃣ Authenticate with Google Cloud, create the artifact repo serviceaccount, attach the artifact registry IAM policy binding to the service account, create the API key, then connect your GitHub repo to your GCP project
 
 ```gcloud auth configure-docker```
+
+```gcloud iam service-accounts create github-actions-sa \  --display-name="GitHub Actions Service Account"```
+
+```gcloud projects add-iam-policy-binding <your-project>   --member="serviceAccount:github-actions-sa@<your-project>.iam.gserviceaccount.com"   --role="roles/artifactregistry.writer"```
+
+```gcloud iam service-accounts keys create key.json \ --iam-account=github-actions-sa@<your-project>.iam.gserviceaccount.com```
+
+```cat key.json```
+
+GitHub repo -> Settings -> Secrets and Variables -> New repository secret -> paste the ENTIRE JSON key file from the previous step and save
 
 ### 4️⃣ Push image to Artifact Registry
 
