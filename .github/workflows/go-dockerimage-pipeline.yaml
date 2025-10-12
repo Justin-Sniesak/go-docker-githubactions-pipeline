@@ -20,7 +20,7 @@ jobs:
 
       #Step2 - Builds the Docker image with provided Go code
       - name: Docker
-        run: docker build -t gotime .
+        run: docker build -t gotime:latest .
 
       #Step3 - Run the container then deletes it once the code has ran
       - name: Run container and capture output
