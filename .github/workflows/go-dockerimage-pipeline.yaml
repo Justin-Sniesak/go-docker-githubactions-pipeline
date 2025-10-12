@@ -22,21 +22,25 @@ jobs:
       - name: Docker
         run: docker build -t gotime:latest .
 
-      #Step3 - Run the container then deletes it once the code has ran
-      - name: Run container and capture output
-        run: docker run --rm gotime
+      #Step3 - Unit Test with tag
+      - name: Run Docker container (test)
+        run: docker run --rm gotime:latest
       
-      #Step4 - Authenticates to Google Cloud with the existing JSON key
+      #Step4 - Run the container then deletes it once the code has ran
+      - name: Run container and capture output
+        run: docker run --rm gotime:latest
+      
+      #Step5 - Authenticates to Google Cloud with the existing JSON key
       - name: Authenticate to Google Cloud using serviceaccount
         uses: google-github-actions/auth@v3
         with:
             credentials_json: '${{ secrets.GCP_SA_KEY }}'
       
-      #Step5 - Configures Docker to access my GCP project
+      #Step6 - Configures Docker to access my GCP project
       - name: Configure Docker to access GCP 
         run: gcloud auth configure-docker us-west1-docker.pkg.dev
 
-      #Step6 - Tags the container and pushes to the Artifact Repo in my GCP project
+      #Step7 - Tags the container and pushes to the Artifact Repo in my GCP project
       - name: Push to Artifact Registry
         run: docker tag gotime:latest us-west1-docker.pkg.dev/juta-0816/go-code/gotime:latest
              docker push us-west1-docker.pkg.dev/juta-0816/go-code/gotime:latest
