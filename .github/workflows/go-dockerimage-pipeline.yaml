@@ -1,8 +1,8 @@
 #This workflow automatically takes my code, builds a docker image, and returns the date and time
 #This is the name of the workflow - used under the Actions tab
-name: Dockerized Go
+name: Go Dockerimage Pipeline
 #This is workflow name - will appear in the list of workflow runs
-run-name: CICD Pipeline
+run-name: CI/CD Pipeline
 #Trigger for the workflow - in otherwords, what causes the workflow to kick off
 on:
   push:
