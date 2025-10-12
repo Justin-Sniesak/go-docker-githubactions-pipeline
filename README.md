@@ -65,7 +65,7 @@ Please note, time returned is in UTC. If running locally, will default to PDT, t
 ```git clone https://github.com/justin-sniesak/go-docker-githubactions-pipeline.git```
 
 ### 2️⃣ Build and run locally
-```docker build -t gotime .```
+```docker build -t gotime:latest .```
 
 ```docker run gotime```
 
@@ -79,7 +79,7 @@ Hello, the date is 10/11/2025, and the time is 07:45 PM.
 
 ### 4️⃣ Push image to Artifact Registry
 
-```docker tag gotime us-west1-docker.pkg.dev/<your-project>/<repo-name>/gotime:latest```
+```docker tag gotime:latest us-west1-docker.pkg.dev/<your-project>/<repo-name>/gotime:latest```
 
 ```docker push us-west1-docker.pkg.dev/<your-project>/<repo-name>/gotime:latest```
 
