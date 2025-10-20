@@ -108,7 +108,7 @@ Outputs current time and date in the pipeline log
 
 ### 💡 Lessons Learned
 
-How to link GitHub Actions → Docker | Create, authenticate to and push Docker image to GCP Artifact Registry
+Create, authenticate to and push Docker image to GCP Artifact Registry
 
 CI/CD pipelines don’t have to be complex to be production-grade
 
