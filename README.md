@@ -1,6 +1,10 @@
-# Go + Docker + GitHub Actions CI/CD Pipeline
+## 🔄 Go + Docker + GitHub Actions CI/CD Pipeline
 
-A lightweight, end-to-end demo showing how to build, containerize, and automate a Go application with **Docker** and **GitHub Actions**, integrated with **Google Cloud Artifact Registry**.
+End-to-end CI/CD lab automating Go application builds through Docker and GitHub Actions, integrated with GCP Artifact Registry.
+
+Built reproducible, production-style pipelines — from local build → tag → push → deploy — and fully documented four real debugging cycles (auth, build, tag, and workflow errors).
+
+📦 100% reproducible builds · 🔁 Automated deploys via GitHub Actions · 🧩 Validated artifact storage in GCP
 
 All commands should be run using bash.
 
