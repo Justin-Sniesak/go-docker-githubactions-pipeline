@@ -69,9 +69,9 @@ Please note, time returned is in UTC. If running locally, will default to PDT, t
 ```git clone https://github.com/justin-sniesak/go-docker-githubactions-pipeline.git```
 
 ### 2️⃣ Build and run locally
-```docker build -t gotime:latest .```
+```docker build -t utcTimeDate:latest .```
 
-```docker run gotime```
+```docker run utcTimeDate```
 
 Verify output:
 
@@ -93,9 +93,9 @@ GitHub repo -> Settings -> Secrets and Variables -> New repository secret -> pas
 
 ### 4️⃣ Push image to Artifact Registry
 
-```docker tag gotime:latest us-west1-docker.pkg.dev/<your-project>/<repo-name>/gotime:latest```
+```docker tag gotime:latest us-west1-docker.pkg.dev/<your-project>/<repo-name>/utcTimeDate:latest```
 
-```docker push us-west1-docker.pkg.dev/<your-project>/<repo-name>/gotime:latest```
+```docker push us-west1-docker.pkg.dev/<your-project>/<repo-name>/utcTimeDate:latest```
 
 ### 5️⃣ GitHub Actions CI/CD
 
@@ -105,8 +105,8 @@ Outputs current time and date in the pipeline log
 
 ### 🧾 Sample Output (GitHub Actions)
 
-```Run docker run --rm gotime```
-  ```docker run --rm gotime```
+```Run docker run --rm utcTimeDate```
+  ```docker run --rm utcTimeDate```
   ```shell: /usr/bin/bash -e {0}```
 ```Hello, the date is 10/12/2025, and the time is 06:10 AM.```
 
