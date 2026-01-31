@@ -32,6 +32,7 @@ Please note, time returned is in UTC. If running locally, will default to PDT, t
 ├── Docs
     └── OPERATIONS_LOG.md
 ├── Dockerfile
+├── LICENSE.md
 ├── README.md
 └── utc-time-date.go
 
